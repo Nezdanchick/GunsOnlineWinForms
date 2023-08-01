@@ -12,7 +12,7 @@ namespace GunsOnlineWinForms
 {
     public partial class Chat : Form
     {
-        public string ChatText { get; private set; }
+        public string ChatText { get; private set; } = "";
         public Chat()
         {
             InitializeComponent();
@@ -36,7 +36,7 @@ namespace GunsOnlineWinForms
             if (ListBox.Items.Count >= 15)
             {
                 ListBox.Items.RemoveAt(0);
-                ChatText = ChatText.Substring(ChatText.IndexOf('\n') + 1);
+                ChatText = ChatText[(ChatText.IndexOf('\n') + 1)..];
             }
         }
 

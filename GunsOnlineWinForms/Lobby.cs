@@ -54,10 +54,19 @@ namespace GunsOnlineWinForms
 
         private void LinkIPCopy_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            LinkIPCopy.Text = "Copied";
+            var text = LinkIPCopy.Text;
+            Clipboard.SetText(TextIP.Text);
+            LinkIPCopy.Invoke(ChangeLinkText);
+            async void ChangeLinkText()
+            {
+                LinkIPCopy.Text = "Copied";
+                await Task.Delay(1000);
+                LinkIPCopy.Text = text;
+            }
         }
         private void LinkIPShow_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            MessageBox.Show(TextIP.Text);
         }
 
         private void ButtonConnect_Click(object sender, EventArgs e)

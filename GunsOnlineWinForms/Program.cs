@@ -11,11 +11,10 @@ namespace GunsOnlineWinForms
         [STAThread]
         static void Main()
         {
-            //у меня английская винда
             Console.OutputEncoding = System.Text.Encoding.Unicode;
             Console.InputEncoding = System.Text.Encoding.Unicode;
             var obj = new Object2D();
-            obj.Move();
+            obj.Move(new Point(1, 1));
 
             Application.Exit();
             Application.EnableVisualStyles();

@@ -1,7 +1,4 @@
-﻿using System;
-using System.Drawing;
-using System.Windows.Forms;
-using GunsOnlineWinForms.Properties;
+﻿using GunsOnlineWinForms.Properties;
 
 namespace GunsOnlineWinForms
 {
@@ -23,8 +20,11 @@ namespace GunsOnlineWinForms
             ButtonMinimize.DisableSelect();
         }
         #region Custom Window Controls
-        private bool Maximized { get =>
-                WindowState == FormWindowState.Maximized; }
+        private bool Maximized
+        {
+            get =>
+                WindowState == FormWindowState.Maximized;
+        }
 
         private void PanelTop_MouseMove(object sender, MouseEventArgs e)
         {
