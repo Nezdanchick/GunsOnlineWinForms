@@ -2,7 +2,7 @@
 
 namespace GunsOnlineWinForms
 {
-    public partial class MainForm : Form
+    public partial class MainForm : CustomForm
     {
         readonly Chat _chat;
         public MainForm()
@@ -14,57 +14,14 @@ namespace GunsOnlineWinForms
             // Icon setup
             IntPtr handle = Resources.icon.GetHicon();
             Icon = Icon.FromHandle(handle);
-            // Button Setup
-            ButtonExit.DisableSelect();
-            ButtonMaximize.DisableSelect();
-            ButtonMinimize.DisableSelect();
         }
-        #region Custom Window Controls
-        private bool Maximized
-        {
-            get =>
-                WindowState == FormWindowState.Maximized;
-        }
-
-        private void PanelTop_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Left)
-            {
-                Location = MousePosition;
-            }
-        }
-
-        private void ButtonExit_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
-        private void ButtonMaximize_Click(object sender, EventArgs e)
-        {
-            if (Maximized)
-            {
-                WindowState = FormWindowState.Normal;
-                ButtonMaximize.Text = "+";
-            }
-            else
-            {
-                WindowState = FormWindowState.Maximized;
-                ButtonMaximize.Text = "-";
-            }
-        }
-
-        private void ButtonMinimize_Click(object sender, EventArgs e)
-        {
-            WindowState = FormWindowState.Minimized;
-        }
-        #endregion
 
         private void MainForm_KeyDown(object sender, KeyEventArgs e)
         {
             switch (e.KeyCode)
             {
                 case Keys.Enter:
-                    _chat.Show();
+                    _chat.ShowDialog();
                     break;
             }
         }

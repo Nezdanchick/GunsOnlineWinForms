@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            PanelTop = new Panel();
-            ButtonExit = new Button();
             TextIP = new TextBox();
             ButtonConnect = new Button();
             ButtonCreate = new Button();
@@ -37,32 +35,7 @@
             TextName = new TextBox();
             LinkIPCopy = new LinkLabel();
             LinkIPShow = new LinkLabel();
-            PanelTop.SuspendLayout();
             SuspendLayout();
-            // 
-            // PanelTop
-            // 
-            PanelTop.BackColor = Color.Gray;
-            PanelTop.Controls.Add(ButtonExit);
-            PanelTop.Location = new Point(0, 0);
-            PanelTop.Margin = new Padding(4, 3, 4, 3);
-            PanelTop.Name = "PanelTop";
-            PanelTop.Size = new Size(275, 25);
-            PanelTop.TabIndex = 1;
-            PanelTop.MouseMove += PanelTop_MouseMove;
-            // 
-            // ButtonExit
-            // 
-            ButtonExit.BackColor = Color.White;
-            ButtonExit.ForeColor = Color.Black;
-            ButtonExit.Location = new Point(15, 0);
-            ButtonExit.Margin = new Padding(4, 3, 4, 3);
-            ButtonExit.Name = "ButtonExit";
-            ButtonExit.Size = new Size(26, 25);
-            ButtonExit.TabIndex = 0;
-            ButtonExit.Text = "X";
-            ButtonExit.UseVisualStyleBackColor = false;
-            ButtonExit.Click += ButtonExit_Click;
             // 
             // TextIP
             // 
@@ -168,23 +141,19 @@
             Controls.Add(ButtonCreate);
             Controls.Add(ButtonConnect);
             Controls.Add(TextIP);
-            Controls.Add(PanelTop);
             ForeColor = Color.Black;
             Margin = new Padding(4, 3, 4, 3);
             Name = "Lobby";
             Text = "Bull Shoot - Menu";
             FormClosing += Lobby_FormClosing;
-            PanelTop.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-        private Panel PanelTop;
         private TextBox TextIP;
         private Button ButtonConnect;
         private Button ButtonCreate;
-        private Button ButtonExit;
         private Button ButtonOffline;
         private TextBox TextName;
         private LinkLabel LinkIPCopy;

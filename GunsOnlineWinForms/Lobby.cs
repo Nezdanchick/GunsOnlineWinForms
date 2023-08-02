@@ -1,17 +1,12 @@
-﻿using System;
-using System.Net.Sockets;
-using System.Drawing;
-using System.Windows.Forms;
-using GunsOnlineWinForms.Properties;
+﻿using GunsOnlineWinForms.Properties;
 
 namespace GunsOnlineWinForms
 {
-    public partial class Lobby : Form
+    public partial class Lobby : CustomForm
     {
-        public Lobby()
+        public Lobby() : base(true, false, false)
         {
             InitializeComponent();
-            FormBorderStyle = FormBorderStyle.None;
             TextIP.Text = Settings.Default.IPAddress;
             TextName.Text = Settings.Default.Username;
             // Icon setup
@@ -19,26 +14,11 @@ namespace GunsOnlineWinForms
             Icon = Icon.FromHandle(handle);
             // Controls setup
             ButtonOffline.Select();
-            ButtonExit.DisableSelect();
             LinkIPCopy.DisableSelect();
             LinkIPShow.DisableSelect();
             TextName.DisableSelect();
             TextIP.DisableSelect();
         }
-        #region Custom Window Controls
-        private void PanelTop_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Left)
-            {
-                Location = MousePosition;
-            }
-        }
-
-        private void ButtonExit_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-        #endregion
 
         private void ShowMainForm()
         {
@@ -47,10 +27,8 @@ namespace GunsOnlineWinForms
             Show();
         }
 
-        private void ButtonOffline_Click(object sender, EventArgs e)
-        {
+        private void ButtonOffline_Click(object sender, EventArgs e) =>
             ShowMainForm();
-        }
 
         private void LinkIPCopy_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {

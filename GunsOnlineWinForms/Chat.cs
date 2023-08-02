@@ -10,15 +10,15 @@ using System.Windows.Forms;
 
 namespace GunsOnlineWinForms
 {
-    public partial class Chat : Form
+    public partial class Chat : CustomForm
     {
         public string ChatText { get; private set; } = "";
-        public Chat()
+        public Chat() : base(true, false, false)
         {
             InitializeComponent();
             SetDesktopLocation(Screen.PrimaryScreen.WorkingArea.Width,
                 Screen.PrimaryScreen.WorkingArea.Height);
-            FormBorderStyle = FormBorderStyle.None;
+
             // Controls setup
             ButtonSend.DisableSelect();
             TextBox.Clear();
