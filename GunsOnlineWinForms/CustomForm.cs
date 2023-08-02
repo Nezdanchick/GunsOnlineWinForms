@@ -21,7 +21,6 @@ namespace GunsOnlineWinForms
         private const int _size = 22;
         private int _xpos = 0;
 
-
         public CustomForm(bool canClose = true, bool canHide = true, bool canMaximize = true)
         {
             // init form

@@ -31,7 +31,7 @@
             TextIP = new TextBox();
             ButtonConnect = new Button();
             ButtonCreate = new Button();
-            ButtonOffline = new Button();
+            ButtonHost = new Button();
             TextName = new TextBox();
             LinkIPCopy = new LinkLabel();
             LinkIPShow = new LinkLabel();
@@ -76,16 +76,16 @@
             // 
             // ButtonOffline
             // 
-            ButtonOffline.BackColor = Color.White;
-            ButtonOffline.ForeColor = Color.Black;
-            ButtonOffline.Location = new Point(156, 31);
-            ButtonOffline.Margin = new Padding(4, 3, 4, 3);
-            ButtonOffline.Name = "ButtonOffline";
-            ButtonOffline.Size = new Size(88, 27);
-            ButtonOffline.TabIndex = 8;
-            ButtonOffline.Text = "Offline";
-            ButtonOffline.UseVisualStyleBackColor = false;
-            ButtonOffline.Click += ButtonOffline_Click;
+            ButtonHost.BackColor = Color.White;
+            ButtonHost.ForeColor = Color.Black;
+            ButtonHost.Location = new Point(156, 31);
+            ButtonHost.Margin = new Padding(4, 3, 4, 3);
+            ButtonHost.Name = "ButtonHost";
+            ButtonHost.Size = new Size(88, 27);
+            ButtonHost.TabIndex = 8;
+            ButtonHost.Text = "Host";
+            ButtonHost.UseVisualStyleBackColor = false;
+            ButtonHost.Click += ButtonOffline_Click;
             // 
             // TextName
             // 
@@ -137,7 +137,7 @@
             Controls.Add(LinkIPShow);
             Controls.Add(LinkIPCopy);
             Controls.Add(TextName);
-            Controls.Add(ButtonOffline);
+            Controls.Add(ButtonHost);
             Controls.Add(ButtonCreate);
             Controls.Add(ButtonConnect);
             Controls.Add(TextIP);
@@ -154,7 +154,7 @@
         private TextBox TextIP;
         private Button ButtonConnect;
         private Button ButtonCreate;
-        private Button ButtonOffline;
+        private Button ButtonHost;
         private TextBox TextName;
         private LinkLabel LinkIPCopy;
         private LinkLabel LinkIPShow;

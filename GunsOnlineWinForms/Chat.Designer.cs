@@ -65,7 +65,7 @@ namespace GunsOnlineWinForms
             this.ListBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.ListBox.ForeColor = System.Drawing.Color.White;
             this.ListBox.FormattingEnabled = true;
-            this.ListBox.Location = new System.Drawing.Point(12, 12);
+            this.ListBox.Location = new System.Drawing.Point(12, 32);
             this.ListBox.Name = "ListBox";
             this.ListBox.Size = new System.Drawing.Size(238, 247);
             this.ListBox.TabIndex = 2;
